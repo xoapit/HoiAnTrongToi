@@ -17,7 +17,7 @@ function getListArticles(){
 
 	$result= mysqli_query($conn,"select * from article");
 	while($row= mysqli_fetch_assoc($result)){
-		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag']);
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 		$articles->append($article); 
 	}
 	return $articles;
@@ -29,7 +29,7 @@ function getArticle($idArticle){
 
 	$result= mysqli_query($conn,"select * from article where idArticle='".$idArticle."'");
 	while($row= mysqli_fetch_assoc($result)){
-		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag']);
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 	}
 	return $article;
 }

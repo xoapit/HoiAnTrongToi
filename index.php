@@ -1,3 +1,6 @@
+<?php
+include('controller/controller.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,15 +10,13 @@
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 	<title>Hội An Trong Tôi</title>
-
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link href="css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
+	<link href="css/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -96,17 +97,80 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-		<!--header-->
-		<!--content page-->
-		<?php 
-			include('controller/controller.php');
-			$articles= getListArticles();
-			foreach ($articles as $article) {
-				echo $article->getIdArticle();
-			}
-		?>
-		<!--content page-->
-	</body>
-	</html>
+		<div class="container noibat" style="padding-top: -200px;">
+			<div class="col-md-4">
+				<center>
+					<img src="image/thumb1.jpg" class="img_thumb img-circle"><br>
+					<a href="http:\\google.com.vn" class="link_below_image">Con Người Hội An</a>
+				</center>
+			</div>
+			<div class="col-md-4">
+				<center>
+					<img src="image/thumb2.jpg" class="img_thumb img-circle"><br>
+					<a href="http:\\google.com.vn" class="link_below_image">Lễ Hội & Sự Kiện</a>
+				</center>
+			</div>
+			<div class="col-md-4">
+				<center>
+					<img src="image/thumb3.jpg" class="img_thumb img-circle"><br>
+					<a href="http:\\google.com.vn" class="link_below_image">Địa điểm du lịch </a>
+				</center>
+			</div>
+		</div>
+
+		<div class="container" style="margin-top: 20px;">
+			<div class="col-md-8">
+				<div class="box-content row">
+					<h8 class="text-bold background-red text-white">Hội An trong tôi</h8>
+					<div class="line_red"></div>
+					<!--doan1-->
+					<?php
+					$articles= getListArticles();
+					foreach ($articles as $article) {
+						?>							
+						<div>
+							<div class="col-md-12">
+								<div class="row thumbnail">
+									<div class="col-md-4" style="margin-top:10px;">
+										<img src="<?php echo $article->getImage(); ?>" class="img-rounded" style="box-shadow:0px 0px 5px black;" width="200px" height="200px" />
+									</div>
+									<div class="col-md-8 caption">
+										<h3><?php echo $article->getTitle(); ?></h3><?php echo substr($article->getContent(), 0,200).'...'; ?>
+										<hr />
+										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?></span>
+											<span class="glyphicon glyphicon-calendar"><?php
+											 $publishDate=$article->getPublishDate();
+											 echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?></span>
+										</div>
+										<a href="" class="btn btn-primary pos_right_below" role="button">Read more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?php
+					}
+					?>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="box-content row">
+					<h8 class="text-bold background-red text-white">Tin Tức</h8>
+					<div class="line_red"></div>
+					<div class="row">
+						<dir class="col-md-3">
+							<img src="image/thumb2.jpg" style="height: 70px; width: 70px;border: 1px solid black; margin-top:-10px;padding-top: 0px;">
+						</dir>
+						<div class="col-md-9">
+							<p>Chào mừng đem máy về đem máy</p>
+						</div>
+					</div>
+					<hr style="margin: 0px; padding-bottom: 7px;">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
