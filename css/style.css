@@ -1,0 +1,47 @@
+
+.header{
+    background-image: url('../image/hoian_background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 20px; 
+    padding-top: 20px;
+    height: 550px;
+}
+
+.header_top{
+    height: 50px;
+    background: #c0392b;
+    color: #eeeeee;
+    padding-top:15px;
+}
+
+.navbar-nav li:hover{
+    background: #c0392b;
+}
+
+.search_top{
+    padding-top: 100px;
+}
+
+
+.input_search{
+}
+
+.input_search input{
+    opacity: 0.6;
+    border: 1px solid #e74c3c;
+    font-weight: 50;
+}
+
+.input_search input:focus{
+    opacity: 1.0;
+}
+
+.btn_search{
+    background-image: url('../image/search.png');
+    background-repeat: no-repeat;
+}
+
+.logo_top{
+    padding: 3%;
+}
