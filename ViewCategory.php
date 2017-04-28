@@ -1,5 +1,5 @@
 <?php
-include('controller/controller.php');
+$idCategory= $_GET['idCategory'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,14 +10,13 @@ include('controller/controller.php');
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Hội An Trong Tôi</title>
+	<title>Xem theo thể loại</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
 	<link href="css/style.css" rel="stylesheet">
-
 </head>
 <body>
 	<div class="container-fixed">
@@ -122,11 +121,12 @@ include('controller/controller.php');
 		<div class="container" style="margin-top: 20px;">
 			<div class="col-md-8">
 				<div class="box-content row">
-					<h8 class="text-bold background-red text-white">Hội An trong tôi</h8>
+					<h8 class="text-bold background-red text-white">Xem theo thể loại</h8>
 					<div class="line_red"></div>
 					<!--doan1-->
 					<?php
-					$articles= getListArticles();
+					include('controller/controller.php');
+					$articles= getArticlesByIdCategory($idCategory);
 					foreach ($articles as $article) {
 						?>							
 						<div>
@@ -137,40 +137,40 @@ include('controller/controller.php');
 									</div>
 									<div class="col-md-8 caption">
 										<h3><?php echo $article->getTitle(); ?></h3><?php echo substr($article->getContent(), 0,200).'...'; ?>
-										<hr />
+										<hr/>
 										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?></span>
 											<span class="glyphicon glyphicon-calendar"><?php
-											 $publishDate=$article->getPublishDate();
-											 echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?></span>
+												$publishDate=$article->getPublishDate();
+												echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?></span>
+											</div>
+											<a href="" class="btn btn-primary pos_right_below" role="button">Read more</a>
 										</div>
-										<a href="" class="btn btn-primary pos_right_below" role="button">Read more</a>
 									</div>
 								</div>
 							</div>
-						</div>
-						<?php
-					}
-					?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="box-content row">
-					<h8 class="text-bold background-red text-white">Tin Tức</h8>
-					<div class="line_red"></div>
-					<div class="row">
-						<dir class="col-md-3">
-							<img src="image/thumb2.jpg" style="height: 70px; width: 70px;border: 1px solid black; margin-top:-10px;padding-top: 0px;">
-						</dir>
-						<div class="col-md-9">
-							<p>Hội an là thành phố cổ kính</p>
-						</div>
+							<?php
+						}
+						?>
 					</div>
-					<hr style="margin: 0px; padding-bottom: 7px;">
+				</div>
+				<div class="col-md-4">
+					<div class="box-content row">
+						<h8 class="text-bold background-red text-white">Tin Tức</h8>
+						<div class="line_red"></div>
+						<div class="row">
+							<dir class="col-md-3">
+								<img src="image/thumb2.jpg" style="height: 70px; width: 70px;border: 1px solid black; margin-top:-10px;padding-top: 0px;">
+							</dir>
+							<div class="col-md-9">
+								<p>Hội an là thành phố cổ kính</p>
+							</div>
+						</div>
+						<hr style="margin: 0px; padding-bottom: 7px;">
 
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-</body>
-</html>
+	</body>
+	</html>
