@@ -1,28 +1,33 @@
-
+<?php 
+include('../controller/controller.php');
+?>
+<?php include('addarticle.php') ?>
 <!-- page content -->
-<div class="container" style="background:#eee;">
+<span class="glyphycon glyphycon-list"></span>
+<div class="boxTitle">
+  <span class="glyphicon glyphicon-check"></span>
+  List Articles
+</div>
+<div class="container boxContent" style="background:#eee;">
  <div class="col-xs-12">
    <div class="row">
 
-     <div class="box-white table-responsive">
-       <div class="text-bold"> Articles
-         <button class="btn btn-info float-right">Create new article</button>
-       </div>
+     <div class="box-white table-responsive table-bordered">
        <hr>
        <table class="table table-striped table-responsive">
          <thead>
            <tr>
              <th style="width:5%">ID</th>
-             
+
              <th style="width:10%">Category</th>
              <th style="width:20%">Title</th>
-             <th style="width:35%">Content</th>
+             <th style="width:20%">Author</th>
+             <th style="width:15%">Date</th>
              <th style="width:20%">Actions</th>
            </tr>
          </thead>
          <tbody>
           <?php
-          require('../controller/controller.php');
           $articles= getListArticles();
           foreach ($articles as $article) {
 
@@ -31,11 +36,12 @@
               <td><?php echo $article->getIdArticle(); ?></td>
               <td><?php echo getCategoryName($article->getIdCategory()); ?></td>
               <td><?php echo $article->getTitle() ?></td>
-              <td><?php echo substr($article->getContent(),0,100); ?></td>
+              <td><?php echo $article->getAuthor(); ?></td>
+              <td><?php echo $article->getPublishDate(); ?></td>
               <td>
-                <button class="btn btn-info">View</button>
-                <button class="btn btn-success">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-info" onclick="viewArticle(<?php echo "'".$article->getIdArticle()."'"; ?>)">View</button>
+                <button class="btn btn-success" onclick="callEditArticle(<?php echo "'".$article->getIdArticle()."'"; ?>)">Edit</button>
+                <button class="btn btn-danger" onclick="deleteArticle(<?php echo "'".$article->getIdArticle()."'"; ?>)">Delete</button>
               </td>                      
             </tr>
             <?php

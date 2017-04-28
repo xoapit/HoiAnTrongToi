@@ -17,7 +17,6 @@ include('controller/controller.php');
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
 	<link href="css/style.css" rel="stylesheet">
-
 </head>
 <body>
 	<div class="container-fixed">
@@ -266,6 +265,5 @@ include('controller/controller.php');
 				</div>
 			</div>
 		</div>
-
 	</body>
 	</html>

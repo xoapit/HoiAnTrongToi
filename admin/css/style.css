@@ -3,3 +3,79 @@
 	background: #2c1e10;
 }
 
+.webContent{
+	padding: 20px;
+	background: #fefefe;
+}
+
+
+.boxTitle{
+	background: #c0392b;
+	color: white;
+	font-weight: bolder;
+	padding: 10px;
+	margin-top:50px;
+	width: 30%;
+	box-shadow: 0px 0px 3px red;
+}
+
+.boxContent{
+	padding: 20px;
+	background: #fdfdfd;
+	border: #c0392b solid 1px;
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	box-shadow: 0px 0px 3px red;
+}
+
+.footer{
+	background: #000;
+}
+
+.boxInfo{
+	background-image: url('../images/hoian1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 65px;
+}
+
+red{
+	color: #c0392b;
+}
+
+blue{
+	color: #2980b9;
+}
+
+.img_thumb{
+	border: #dedede solid 8px;
+	box-shadow: 0px 0px 5px #eee;
+}
+
+
+.boxLogin{
+	background: #34495e;
+	padding-top: 100px;
+}
+
+.boxLoginContent{
+	padding: 40px;
+	background: #eee;
+}
+
+.boxTitleLogin{
+	font-weight: bolder;
+	font-size: 200%;
+	color: #c0392b;
+}
+
+.jumbotron{
+	margin-top: 20px;
+	padding: 15px;
+}
+
+#boxAddArticle {
+  transition: margin-left 2s 0.5s ease-in-out;
+  -moz-transition: margin-left 2s 0.5s ease-in-out;
+  -webkit-transition: margin-left 2s 0.5s ease-in-out;
+}
