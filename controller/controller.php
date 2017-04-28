@@ -54,7 +54,7 @@ function getArticle($idArticle){
 	while($row= mysqli_fetch_assoc($result)){
 		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 	}
-	return $article;
+	return $article;	
 }
 
 
