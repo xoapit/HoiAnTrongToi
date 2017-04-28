@@ -1,5 +1,5 @@
 <?php
-$idCategory= $_GET['idCategory'];
+include('controller/controller.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,19 +10,19 @@ $idCategory= $_GET['idCategory'];
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Xem theo thể loại</title>
+	<title>Hội An Trong Tôi</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
 	<link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
 	<div class="container-fixed">
 		<div class="header_top">
-			<div class="container">Tel: 01672734732
-			</div>
+			<div class="container">Tel: 01672734732</div>
 		</div>
 		<!--header-->
 		<div class="header">
@@ -48,25 +48,25 @@ $idCategory= $_GET['idCategory'];
 					<div class="collapse navbar-collapse" id="menu">
 						<ul class="nav navbar-nav ">
 							<li>
-								<a href="#" style="color:#FFF">LỄ HỘI</a>
+								<a href="viewCategory.php?idCategory=C02" style="color:#FFF">LỄ HỘI</a>
 							</li>
 							<li>
-								<a href="#" style="color:#FFF">ĐIỂM THAM QUAN</a>
+								<a href="viewCategory.php?idCategory=C04" style="color:#FFF">ĐIỂM THAM QUAN</a>
 							</li>
 							<li>
-								<a href="#" style="color:#FFF">ẨM THỰC</a>
+								<a href="viewCategory.php?idCategory=C03" style="color:#FFF">ẨM THỰC</a>
 							</li>
 							<li>
-								<a href="#" style="color:#FFF">DV LƯU TRÚ</a>
+								<a href="viewCategory.php?idCategory=C05" style="color:#FFF">DV LƯU TRÚ</a>
 							</li>
 							<li>
-								<a href="#" style="color:#FFF">BẢN ĐỒ</a>
+								<a href="map.php" style="color:#FFF">BẢN ĐỒ</a>
 							</li>
 							<li>
-								<a href="#" style="color:#FFF">THỜI TIẾT</a>
+								<a href="weather.php" style="color:#FFF">THỜI TIẾT</a>
 							</li>
 							<li>
-								<a href="#" style="color:#FFF">NGÂN HÀNG</a>
+								<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
 							</li>						
 						</ul>
 
@@ -119,62 +119,11 @@ $idCategory= $_GET['idCategory'];
 			</div>
 		</div>
 
-		<div class="container" style="margin-top: 20px;">
-			<div class="col-md-8">
-				<div class="box-content row">
-					<h8 class="text-bold background-red text-white">Xem theo thể loại</h8>
-					<div class="line_red">
-					</div>
-					<!--doan1-->
-					<?php
-					include('controller/controller.php');
-					$articles= getArticlesByIdCategory($idCategory);
-					foreach ($articles as $article) {
-						?>							
-						<div>
-							<div class="col-md-12">
-								<div class="row thumbnail">
-									<div class="col-md-4" style="margin-top:10px;">
-										<img src="<?php echo $article->getImage(); ?>" class="img-rounded" style="box-shadow:0px 0px 5px black;" width="200px" height="200px" />
-									</div>
-									<div class="col-md-8 caption">
-										<h3><?php echo $article->getTitle(); ?></h3><?php echo substr($article->getContent(), 0,200).'...'; ?>
-										<hr/>
-										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?></span>
-											<span class="glyphicon glyphicon-calendar"><?php
-												$publishDate=$article->getPublishDate();
-												echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
-												
-											</span>
-										</div>
-										<a href="" class="btn btn-primary pos_right_below" role="button">Read more</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php
-					}
-					?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="box-content row">
-					<h8 class="text-bold background-red text-white">Tin Tức</h8>
-					<div class="line_red">
-					</div>
-					<div class="row">
-						<dir class="col-md-3">
-							<img src="image/thumb2.jpg" style="height: 70px; width: 70px;border: 1px solid black; margin-top:-10px;padding-top: 0px;">
-						</dir>
-						<div class="col-md-9">
-							<p>Hội an là thành phố cổ kính</p>
-						</div>
-					</div>
-					<hr style="margin: 0px; padding-bottom: 7px;">
-
-				</div>
-			</div>
+		<center>
+			<div class="container box-content" style="margin-top: 20px;">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30700.361084117867!2d108.32558609426825!3d15.880486640227623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31420dd4e1353a7b%3A0xae336435edfcca3!2zVHAuIEjhu5lpIEFuLCBRdeG6o25nIE5hbSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1493371163659" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
-	</div>
-</body>
-</html>
+		</center>
+
+	</body>
+	</html>
