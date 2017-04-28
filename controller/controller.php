@@ -23,6 +23,17 @@ function getListArticles(){
 	return $articles;
 }
 
+function getArticlesByIdCategory($idCategory){
+	$articles;
+	$conn= getConnect();
+
+	$result= mysqli_query($conn,"select * from article where idCategory='".$idCategory."'");
+	while($row= mysqli_fetch_assoc($result)){
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
+	}
+	return $article;
+}
+
 function getArticle($idArticle){
 	$articles;
 	$conn= getConnect(); 
