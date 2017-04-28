@@ -24,14 +24,15 @@ function getListArticles(){
 }
 
 function getArticlesByIdCategory($idCategory){
-	$articles;
-	$conn= getConnect();
+	$articles = new ArrayObject();
+	$conn= getConnect(); 
 
-	$result= mysqli_query($conn,"select * from article where idCategory='".$idCategory."'");
+	$result= mysqli_query($conn,"select * from article where idCategory='$idCategory'");
 	while($row= mysqli_fetch_assoc($result)){
 		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
+		$articles->append($article); 
 	}
-	return $article;
+	return $articles;
 }
 
 function getArticle($idArticle){
@@ -42,7 +43,7 @@ function getArticle($idArticle){
 	while($row= mysqli_fetch_assoc($result)){
 		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 	}
-	return $article;
+	return $article;	
 }
 
 function addArticle($article){

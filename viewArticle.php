@@ -1,5 +1,7 @@
 <?php
-$idCategory= $_GET['idCategory'];
+include('controller/controller.php');
+$idArticle= $_GET['idArticle'];
+$article=getArticle($idArticle);
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,19 +12,19 @@ $idCategory= $_GET['idCategory'];
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Xem theo thể loại</title>
+	<title><?php echo $article->getTitle();	?></title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
 	<link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
 	<div class="container-fixed">
 		<div class="header_top">
-			<div class="container">Tel: 01672734732
-			</div>
+			<div class="container">Tel: 01672734732</div>
 		</div>
 		<!--header-->
 		<div class="header">
@@ -122,59 +124,39 @@ $idCategory= $_GET['idCategory'];
 		<div class="container" style="margin-top: 20px;">
 			<div class="col-md-8">
 				<div class="box-content row">
-					<h8 class="text-bold background-red text-white">Xem theo thể loại</h8>
-					<div class="line_red">
-					</div>
+					<h8 class="text-bold background-red text-white">Nội dung bài viết</h8>
+					<div class="line_red"></div>
 					<!--doan1-->
-					<?php
-					include('controller/controller.php');
-					$articles= getArticlesByIdCategory($idCategory);
-					foreach ($articles as $article) {
-						?>							
-						<div>
-							<div class="col-md-12">
-								<div class="row thumbnail">
-									<div class="col-md-4" style="margin-top:10px;">
-										<img src="<?php echo $article->getImage(); ?>" class="img-rounded" style="box-shadow:0px 0px 5px black;" width="200px" height="200px" />
-									</div>
-									<div class="col-md-8 caption">
-										<h3><?php echo $article->getTitle(); ?></h3><?php echo substr($article->getContent(), 0,200).'...'; ?>
-										<hr/>
-										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?></span>
-											<span class="glyphicon glyphicon-calendar"><?php
-												$publishDate=$article->getPublishDate();
-												echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
-												
-											</span>
-										</div>
-										<a href="" class="btn btn-primary pos_right_below" role="button">Read more</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php
-					}
-					?>
+					<div class="box-content" style="padding: 20px;">
+					<center><h3><?php echo $article->getTitle();?></h3></center><br>
+						<p><?php echo $article->getContent();?></p>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="box-content row">
 					<h8 class="text-bold background-red text-white">Tin Tức</h8>
-					<div class="line_red">
-					</div>
-					<div class="row">
-						<dir class="col-md-3">
-							<img src="image/thumb2.jpg" style="height: 70px; width: 70px;border: 1px solid black; margin-top:-10px;padding-top: 0px;">
-						</dir>
-						<div class="col-md-9">
-							<p>Hội an là thành phố cổ kính</p>
+					<div class="line_red"></div>
+					<?php
+					$articles= getArticlesByIdCategory('C01');
+					foreach ($articles as $article) {
+						?>
+						<div class="row">
+							<dir class="col-md-3">
+								<img src="<?php echo $article->getImage(); ?>" style="height: 70px; width: 70px; margin-top:-10px;padding-top: 0px;" class="img-rounded">
+							</dir>
+							<div class="col-md-9">
+								<p><?php echo $article->getTitle(); ?></p>
+							</div>
 						</div>
-					</div>
-					<hr style="margin: 0px; padding-bottom: 7px;">
-
+						<hr style="margin: 0px; padding-bottom: 7px;">
+						<?php
+					}
+					?>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>
