@@ -6,14 +6,18 @@ class Article{
 	private  $image;
 	private  $idCategory;
 	private  $hashtag;
+	private $author;
+	private $publishDate;
 
-	public function __construct($idArticle, $title, $content,  $image, $idCategory,$hashtag){
+	public function __construct($idArticle, $title, $content,  $image, $idCategory,$hashtag,$author,$publishDate ){
 		$this->idArticle=$idArticle;
 		$this->title=$title;
 		$this->content=$content;
 		$this->image=$image;
 		$this->idCategory=$idCategory;
 		$this->hashtag=$hashtag;
+		$this->author=$author;
+		$this->publishDate=$publishDate;
 	}
 
 	public function getIdArticle(){
@@ -38,6 +42,13 @@ class Article{
 
 	public function getHashtag(){
 		return $this->hashtag;
+	}
+
+	public function getAuthor(){
+		return $this->author;
+	}
+	public function getPublishDate(){
+		return $this->publishDate;
 	}
 }
 ?>

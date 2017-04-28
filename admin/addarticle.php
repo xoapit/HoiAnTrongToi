@@ -1,25 +1,82 @@
-Thêm Bài Viết Mới:
-<form action="" method="post">
-  <tr>
-   <td>Tiêu Đề: </td>
-   <td> <input type="text" name="tieude" value="" required style="color:Black;width:100%;"/></td>
- </tr>
- <hr style="margin:5px;">
- <tr>
-   <td>URL Image: </td>
-   <td> <input type="text" name="image" value="" style="color:Black;width:30%;"/></td>
-   <td>Thể Loại: </td>
-   <select name="idtheloai" style="width:150px;height:25px;">
-    <option selected="selected" value="2">Thông Báo</option>
-    <option value="3">Tin Tức</option>
-  </select>
-  <button type="submit" name="them" class="btn btn-danger"><strong>Thêm</strong></button>
-</tr>
-<hr>
-<textarea name="noidung" id="editor1" rows="10" cols="80">
+<?php  
+session_start();
+if(!(isset($_SESSION['admin']))){
+ header('Location:login.php');
+ exit();
+}
+?>
+<button class="btn btn-info pull-right" id="btnCreateNewArticle" onclick="switchAddArticle()">Create new article</button>
+<div class="box_add_article" id="boxAddArticle">
+  <div class="boxTitle">
+    <span class="glyphicon glyphicon-check"></span>
+    Create New Article
+  </div>
+  <div class="boxContent">
+    <form method="post" class="form form-horizontal">
+      <div class="form-group">
+        <label for="title" class="col-sm-2 ">Title</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" required="true" id="title" />
+        </div>
+      </div>
 
-</textarea>
-<script>          
- CKEDITOR.replace( 'editor1' );
-</script>
-</form>
+      <div class="form-group">
+        <label for="urlimage" class="col-sm-2 ">Url Image</label>
+        <div class="col-sm-8">
+          <input type="text" required="true" class="form-control" id="urlImage"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hashtag" class="col-sm-2 ">Hashtag</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="hashtag"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hashtag" class="col-sm-2 ">Author</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="author"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title" class="col-sm-2">Category</label>
+        <div class="col-sm-3">
+          <select name="categoryName" id="idCategory" class="form-control">
+            <?php 
+            $categories= getListCategories();
+            foreach ($categories as $category) {
+              ?>
+              <option value="<?php echo $category->getIdCategory(); ?>"><?php echo $category->getCategoryName(); ?></option>
+              <?php } ?>
+            </select>
+          </div>
+        </div>
+
+        <hr>
+        <textarea name="articleContent" id="articleContent" rows="10" cols="100" class="form-group" value="">
+
+        </textarea>
+        <hr>
+        <button name="btnAdd" class="btn btn-danger text-right pull-right" onclick="callAddArticle()"><strong>Create</strong></button>
+        <script> 
+          CKEDITOR.replace('articleContent');
+        </script>
+      </form>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      switchAddArticle();
+    });  
+    function switchAddArticle(){
+      if(document.getElementById('boxAddArticle').style.display=='none'){
+        document.getElementById('boxAddArticle').style.display='';
+      }else{
+        document.getElementById('boxAddArticle').style.display='none';
+      }
+    }
+  </script>
+  <script src="js/myjs.js"></script>

@@ -16,8 +16,6 @@
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
-
-</head>
 <body>
 	<div class="container-fixed">
 		<div class="header_top">
@@ -100,13 +98,7 @@
 		</div>
 		<!--header-->
 		<!--content page-->
-		<?php 
-			include('controller/controller.php');
-			$articles= getListArticles();
-			foreach ($articles as $article) {
-				echo $article->getIdArticle();
-			}
-		?>
+		
 		<!--content page-->
 	</body>
 	</html>
