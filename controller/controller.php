@@ -12,7 +12,11 @@ if(file_exists ('model/category.php')){
 	include('../model/category.php');
 }
 
-include('../model/admin.php');
+if(file_exists ('model/admin.php')){
+	include('model/admin.php');	
+}else{
+	include('../model/admin.php');
+}
 
 if(file_exists ('model/feedback.php')){
 	include('model/feedback.php');	
