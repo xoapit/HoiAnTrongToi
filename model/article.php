@@ -39,10 +39,6 @@ class Article{
 		return $this->description;
 	}
 
-	public function getDescription(){
-		return $this->description;
-	}
-
 	public function getImage(){
 		return $this->image;
 	}
