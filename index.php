@@ -133,7 +133,7 @@ include('controller/controller.php');
 										<img src="<?php echo $article->getImage(); ?>" class="img-rounded" style="box-shadow:0px 0px 5px black;" width="200px" height="200px" />
 									</div>
 									<div class="col-md-8 caption">
-										<h3><?php echo $article->getTitle(); ?></h3><?php echo substr($article->getContent(), 0,200).'...'; ?>
+										<h3><?php echo $article->getTitle(); ?></h3><?php echo $article->getDescription(); ?>
 										<hr />
 										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?></span>
 											<span class="glyphicon glyphicon-calendar"><?php
