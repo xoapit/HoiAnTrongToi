@@ -1,5 +1,6 @@
 <?php
 class Article{
+
 	private  $idArticle;
 	private  $title;
 	private  $content;
@@ -7,6 +8,7 @@ class Article{
 	private  $image;
 	private  $idCategory;
 	private  $hashtag;
+
 	private $author;
 	private $publishDate;
 
@@ -32,6 +34,9 @@ class Article{
 
 	public function getContent(){
 		return $this->content;
+	}
+	public function getDescription(){
+		return $this->description;
 	}
 
 	public function getDescription(){
