@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!(isset($_SESSION['admin']))){
+ header('Location:login.php');
+ exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +59,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2>Xoapit</h2>
+              <h2><?php echo $_SESSION['admin']; ?></h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -63,14 +71,14 @@
             <div class="menu_section">
               <h3>General</h3>
               <ul class="nav side-menu">
-                <li><a href="index.php"><i class="fa fa-home"></i> Home</a>                   
+                <li id="menu_home"><a ><i class="fa fa-home"></i> Home</a>                   
                 </li>
 
-                <li><a href="article.php"><i class="fa fa-newspaper-o"></i> Article</a>                   
+                <li id="menu_article"><a><i class="fa fa-newspaper-o"></i> Article</a>                   
                 </li>
-                <li><a href="#"><i class="fa fa-pencil"></i> Feedback</a>                   
+                <li id="menu_feedback"><a href="#"><i class="fa fa-pencil"></i> Feedback</a>                   
                 </li>
-                <li><a href="#"><i class="fa fa-user"></i> Contact</a>                   
+                <li id="menu_contact"><a href="#"><i class="fa fa-user"></i> Contact</a>                   
                 </li>
               </ul>
             </div>
@@ -96,13 +104,14 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/user.png" alt="">Xoapit
+                  <img src="images/user.png" alt="">
+                  <?php echo $_SESSION['admin']; ?>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                  <li><a href="javascript:;"> Profile</a></li>              
+                <li><a onclick="callProfile()"> Profile</a></li>              
                   
-                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                 </ul>
               </li>              
             </ul>
@@ -114,16 +123,15 @@
       <!-- page content -->
       <div class="right_col" role="main">
         <div class="webContent" id="webContent" name="webContent">
-            <?php include('articles.php') ?>
-            <?php include('addarticle.php') ?>
+
         </div>
       </div>
       <!-- /page content -->
       
       <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+      <footer  style="background: #000; color:#fff;">
+        <div class="pull-right ">
+          You become what you believe. We believe in ourselve!
         </div>
         <div class="clearfix"></div>
       </footer>
@@ -143,6 +151,26 @@
 
   <!-- Custom Theme Scripts -->
   <script src="build/js/custom.min.js"></script>
+  <script type="text/javascript">
 
+    $(document).ready(function(){
+      $("#webContent").load('home.php');
+      $('#menu_article').click(function(){
+        $('#webContent').load('articles.php');
+      });
+      $('#menu_home').click(function(){
+        $('#webContent').load('home.php');
+      });
+      $('#menu_feedback').click(function(){
+        $('#webContent').load('feedbacks.php');
+      });
+    })
+
+
+    $(document).ready(function(){
+      $(".dropdown-toggle").dropdown();
+    });
+
+  </script>
 </body>
 </html>

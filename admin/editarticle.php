@@ -1,26 +1,92 @@
-Sửa Bài Viết:
-<form action="" method="post">
-   <tr>
-      <td>Tiêu Đề: </td>
-      <td> <input type="text" name="tieude" value="<?php echo $tieude ?>" style="color:Black;width:100%;font-size:18px"/>      </td>
-   </tr>
-   <hr style="margin:5px;">
-   <tr>
-     <td>URL Image: </td>
-     <td> <input type="text" name="image" value="<?php echo $image ?>" style="color:Black;width:30%;font-size:18px"/></td>
-     <td>Thể Loại: </td>
-     <td> <input type="text" name="tieude" value="<?php 
-        if($row['idtheloai']==2) echo "Thông Báo";
-        else if($row['idtheloai']==3) echo "Tin Tức";
-        else echo "Giới Thiệu";
-        ?>" readonly disabled="disable" style="color:Black;width:20%;font-size:12px"/>      </td>
-        <button type="submit" name="luu" class="btn btn-danger"><strong> Lưu Thay Đổi</strong></button>
-     </tr>
-     <hr>
-     <textarea name="noidung" id="editor1" rows="10" cols="80">
-       <?php echo $noidung; ?> 
-    </textarea>
-    <script>          
-      CKEDITOR.replace( 'editor1' );
-   </script>
-</form>
+<?php 
+session_start();
+if(!(isset($_SESSION['admin']))){
+ header('Location:login.php');
+ exit();
+}
+
+$idArticle= $_GET['idArticle'];
+include '../controller/controller.php';
+$article=getArticle($idArticle);
+?>
+<div class="box_add_article" id="boxAddArticle">
+  <div class="boxTitle">
+    <span class="glyphicon glyphicon-check"></span>
+    Edit Article
+  </div>
+  <div class="boxContent">
+    <form method="post" class="form form-horizontal">
+      <div class="form-group">
+        <label for="title" class="col-sm-2 ">Title</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control"  id="idArticle" style="display: none;" value="<?php echo $article->getIdArticle(); ?>" />
+          <input type="text" class="form-control" required="true" id="title" value="<?php echo $article->getTitle(); ?>" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="urlimage" class="col-sm-2 ">Url Image</label>
+        <div class="col-sm-8">
+          <input type="text" required="true" class="form-control" id="urlImage" value="<?php echo $article->getImage(); ?>" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hashtag" class="col-sm-2 ">Hashtag</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="hashtag" value="<?php echo $article->getTitle(); ?>" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="hashtag" class="col-sm-2 ">Author</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="author" value="<?php echo $article->getAuthor(); ?>" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title" class="col-sm-2">Category</label>
+        <div class="col-sm-3">
+
+          <input type="text" class="form-control" id="categoryName" readonly="true" value="<?php echo getCategoryName($article->getIdCategory()); ?>" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" rows="5" name="description" id="description"><?php echo $article->getDescription(); ?>
+          
+        </textarea>
+      </div>
+      <hr>
+      <textarea name="articleContentEdit" id="articleContentEdit" rows="10" cols="100" class="form-group" >
+        <?php echo $article->getContent(); ?>
+      </textarea>
+      <hr>
+      <button name="btnEdit" class="btn btn-danger text-right pull-right" onclick="editArticle()"><strong>Edit</strong></button>
+      <script> 
+        CKEDITOR.replace('articleContentEdit');
+      </script>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function editArticle(){
+    var articleContentValue= CKEDITOR.instances.articleContentEdit.getData();
+    $.post(
+      'processEditArticle.php',         
+      {
+        idArticle: $('#idArticle').val(),
+        title : $('#title').val(),
+        urlImage : $('#urlImage').val(),
+        author : $('#author').val(),
+        description : $('#description').val(),
+        articleContent :articleContentValue,
+        hashtag:$('#hashtag').val()
+      },  
+      function(result){  
+       $('#webContent').load('article.php');
+     }, 
+     'text'
+     );
+  }
+</script>
+

@@ -1,12 +1,14 @@
 <?php
 class Article{
-	private $idArticle;
-	private $title;
-	private $content;
-	private $description;
-	private $image;
-	private $idCategory;
-	private $hashtag;
+
+	private  $idArticle;
+	private  $title;
+	private  $content;
+	private  $description;
+	private  $image;
+	private  $idCategory;
+	private  $hashtag;
+
 	private $author;
 	private $publishDate;
 
@@ -20,13 +22,6 @@ class Article{
 		$this->hashtag=$hashtag;
 		$this->author=$author;
 		$this->publishDate=$publishDate;
-	}
-	public function getAuthor(){
-		return $this->author;
-	}
-
-	public function getPublishDate(){
-		return $this->publishDate;
 	}
 
 	public function getIdArticle(){
@@ -44,6 +39,10 @@ class Article{
 		return $this->description;
 	}
 
+	public function getDescription(){
+		return $this->description;
+	}
+
 	public function getImage(){
 		return $this->image;
 	}
@@ -54,6 +53,13 @@ class Article{
 
 	public function getHashtag(){
 		return $this->hashtag;
+	}
+
+	public function getAuthor(){
+		return $this->author;
+	}
+	public function getPublishDate(){
+		return $this->publishDate;
 	}
 }
 ?>
