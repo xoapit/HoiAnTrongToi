@@ -49,7 +49,12 @@ $article=getArticle($idArticle);
           <input type="text" class="form-control" id="categoryName" readonly="true" value="<?php echo getCategoryName($article->getIdCategory()); ?>" />
         </div>
       </div>
-
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" rows="5" name="description" id="description"><?php echo $article->getDescription(); ?>
+          
+        </textarea>
+      </div>
       <hr>
       <textarea name="articleContentEdit" id="articleContentEdit" rows="10" cols="100" class="form-group" >
         <?php echo $article->getContent(); ?>
@@ -73,6 +78,7 @@ $article=getArticle($idArticle);
         title : $('#title').val(),
         urlImage : $('#urlImage').val(),
         author : $('#author').val(),
+        description : $('#description').val(),
         articleContent :articleContentValue,
         hashtag:$('#hashtag').val()
       },  
