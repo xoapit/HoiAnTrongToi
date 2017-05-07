@@ -31,7 +31,7 @@ function getListArticles(){
 	$conn= getConnect(); 
 	$result= mysqli_query($conn,"select * from article");
 	while($row= mysqli_fetch_assoc($result)){
-		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['description'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 		$articles->append($article); 
 	}
 	return $articles;
@@ -42,7 +42,7 @@ function getArticlesByIdCategory($idCategory){
 	$conn= getConnect();
 	$result= mysqli_query($conn,"select * from article where idCategory='".$idCategory."'");
 	while($row= mysqli_fetch_assoc($result)){
-		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['description'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 	}
 	return $article;
 }
@@ -52,7 +52,7 @@ function getArticle($idArticle){
 	$conn= getConnect(); 
 	$result= mysqli_query($conn,"select * from article where idArticle='".$idArticle."'");
 	while($row= mysqli_fetch_assoc($result)){
-		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['description'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
 	}
 	return $article;	
 }
@@ -63,12 +63,13 @@ function addArticle($article){
 	$title=$article->getTitle();
 	$content=$article->getContent();
 	$image=$article->getImage();
+	$description=$article->getDescription();
 	$idCategory=$article->getIdCategory();
 	$hashtag=$article->getHashtag();
 	$author=$article->getAuthor();
 	$publishDate=$article->getPublishDate();
-	$result= mysqli_query($conn,"insert into article (title,content,image,idCategory,hashtag,author,publishDate) values(N'".$title."',
-		N'".$content."','".$image."','".$idCategory."',N'".$hashtag."',N'".$author."',N'".$publishDate."')");
+	$result= mysqli_query($conn,"insert into article (title,content,description,image,idCategory,hashtag,author,publishDate) values(N'".$title."',
+		N'".$content."',N'".$content."',N'$description' ,'".$image."','".$idCategory."',N'".$hashtag."',N'".$author."',N'".$publishDate."')");
 }
 
 function updateArticle($article){
@@ -76,12 +77,13 @@ function updateArticle($article){
 	$idArticle=$article->getIdArticle();
 	$title=$article->getTitle();
 	$content=$article->getContent();
+	$description=$article->getDescription();
 	$image=$article->getImage();
 	$idCategory=$article->getIdCategory();
 	$hashtag=$article->getHashtag();
 	$author=$article->getAuthor();
 	$publishDate=$article->getPublishDate();
-	$result= mysqli_query($conn,"update article set title=N'".$title."', content=N'".$content."', image='".$image."', 
+	$result= mysqli_query($conn,"update article set title=N'".$title."', content=N'".$content."', description=N'".$description."', image='".$image."', 
 		hashtag= N'".$hashtag."' , author=N'$author' where idArticle='".$idArticle."'");
 }
 

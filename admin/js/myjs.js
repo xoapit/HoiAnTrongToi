@@ -97,6 +97,7 @@ function callAddArticle(){
       urlImage : $('#urlImage').val(),
       articleContent :articleContentValue,
       idCategory :$('#idCategory').val(),
+      description :$('#description').val(),
       hashtag:$('#hashtag').val(),
       author:$('#author').val(),
     },  

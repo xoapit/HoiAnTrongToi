@@ -52,6 +52,10 @@ if(!(isset($_SESSION['admin']))){
           </div>
         </div>
 
+        <div class="form-group">
+        <label for="description">Description:</label>
+          <textarea class="form-control" rows="5" name="description" id="description"></textarea>
+        </div>
         <hr>
         <textarea name="articleContent" id="articleContent" rows="10" cols="100" class="form-group" value="">
 
