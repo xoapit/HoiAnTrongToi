@@ -138,7 +138,7 @@ $idCategory= $_GET['idCategory'];
 										<img src="<?php echo $article->getImage(); ?>" class="img-rounded" style="box-shadow:0px 0px 5px black;" width="200px" height="200px" />
 									</div>
 									<div class="col-md-8 caption">
-										<h3><?php echo $article->getTitle(); ?></h3><?php echo $article->getDescription(); ?>
+										<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>"><h3><?php echo $article->getTitle(); ?></h3><a/><?php echo $article->getDescription(); ?>
 										<hr/>
 										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?>&nbsp</span>
 											<span class="glyphicon glyphicon-calendar"><?php
@@ -147,7 +147,7 @@ $idCategory= $_GET['idCategory'];
 												
 											</span>
 										</div>
-										<a href="" class="btn btn-primary pos_right_below" role="button">Read more</a>
+										<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
 									</div>
 								</div>
 							</div>
