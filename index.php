@@ -134,7 +134,7 @@ include('controller/controller.php');
 									<div class="col-md-8 caption">
 										<h3><?php echo $article->getTitle(); ?></h3><?php echo $article->getDescription(); ?>
 										<hr />
-										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?> &nbsp</span>
+										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?>&nbsp</span>
 											<span class="glyphicon glyphicon-calendar"><?php
 												$publishDate=$article->getPublishDate();
 												echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?></span>
