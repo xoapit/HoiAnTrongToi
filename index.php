@@ -249,7 +249,7 @@ include('controller/controller.php');
 							?>
 							<div class="row">
 								<dir class="col-md-3">
-									<img src="<?php echo $article->getImage(); ?>" style="height: 70px; width: 70px; margin-top:-10px;padding-top: 0px;" class="img-rounded">
+									<img link="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" src="<?php echo $article->getImage(); ?>" style="height: 70px; width: 70px; margin-top:-10px;padding-top: 0px;" class="img-rounded">
 								</dir>
 								<div class="col-md-9">
 									<p><?php echo $article->getTitle(); ?></p>
