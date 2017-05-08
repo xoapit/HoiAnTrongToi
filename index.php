@@ -16,7 +16,7 @@ include('controller/controller.php');
 	<script src="bootstrap/js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="ckeditor/ckeditor.js"></script>
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" src="css/style.css">
 </head>
 <body>
 	<div class="container-fixed">
