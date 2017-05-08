@@ -141,7 +141,7 @@ $idCategory= $_GET['idCategory'];
 										<h3><?php echo $article->getTitle(); ?></h3><?php echo $article->getDescription(); ?>
 										<hr/>
 										<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?></span>
-											<span class="glyphicon glyphicon-calendar"><?php
+											<span class="glyphicon glyphicon-calendar">&nbsp<?php
 												$publishDate=$article->getPublishDate();
 												echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
 												
