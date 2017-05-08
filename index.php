@@ -249,10 +249,10 @@ include('controller/controller.php');
 							?>
 							<div class="row">
 								<dir class="col-md-3">
-									<img link="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" src="<?php echo $article->getImage(); ?>" style="height: 70px; width: 70px; margin-top:-10px;padding-top: 0px;" class="img-rounded">
+									<img src="<?php echo $article->getImage(); ?>" style="height: 70px; width: 70px; margin-top:-10px;padding-top: 0px;" class="img-rounded">
 								</dir>
 								<div class="col-md-9">
-									<p><?php echo $article->getTitle(); ?></p>
+									<p><a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>"><?php echo $article->getTitle(); ?></a></p>
 								</div>
 							</div>
 							<?php
