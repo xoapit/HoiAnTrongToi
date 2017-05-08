@@ -1,5 +1,5 @@
-a:hover{
-text-decoration: none;
+a{
+	text-decoration-line: none;
 }
 .header{
     background-image: url('../image/hoian_background.jpg');
