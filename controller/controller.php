@@ -62,7 +62,6 @@ function getArticle($idArticle){
 	return $article;	
 }
 
-
 function addArticle($article){
 	$conn= getConnect(); 
 	$title=$article->getTitle();
