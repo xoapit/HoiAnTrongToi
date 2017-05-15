@@ -2,7 +2,7 @@
 	<div class="container">
 		
 		<div class="col-md-12">
-			<h3 style="border-bottom:5px black solid; padding-bottom: 5px;">HỘI AN TRONG TÔI</h3>
+			<h3 style="border-bottom:5px #fefefe solid; padding-bottom: 5px;">HỘI AN TRONG TÔI</h3>
 		</div>
 		<div class="col-md-12">
 			<div class="col-md-12"><h4>LIÊN HỆ</h4></div>
@@ -24,8 +24,8 @@
 	</div>
 	<div class="col-md-12" style="background-color: #2c2e40;">
 		<div class="container">
-			<div class="col-md-3"><p style="font-weight: bold; margin: 10px 0 10px;">@Copyright by QQTeam 2017</p></div>
-			<div class="col-md-9"><p style="font-weight: bold; margin: 10px 0 10px;"><marquee style="">LATER EQUALS NEVER</marquee></p></div>
+			<div class="col-md-3"><p style="margin: 10px 0 10px;">Copyright by QQTeam 2017</p></div>
+			<div class="col-md-9"><p style="margin: 10px 0 10px;"><marquee style="">Later equals never</marquee></p></div>
 
 		</div>
 	</div>	
