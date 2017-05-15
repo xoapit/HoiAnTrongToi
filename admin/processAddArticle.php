@@ -10,7 +10,7 @@ $hashtag=$_POST['hashtag'];
 $author=$_POST['author'];
 
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-$today = date('m/d/Y', time());
+$today = date('Y/m/d', time());
 $publishDate=$today;
 $article= new Article("",$title,$articleContent,$description,$urlImage,$idCategory,$hashtag,$author,$publishDate);
 addArticle($article);
