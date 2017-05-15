@@ -23,26 +23,6 @@ function callEditArticle(IdArticle){
   $('#webContent').load('editArticle.php?idArticle='+IdArticle);
 }
 
-function addArticle(){
-  var articleContentValue= CKEDITOR.instances.articleContent.getData();
-  $.post(
-    'processaddarticle.php',         
-    {
-      title : $('#title').val(),
-      urlImage : $('#urlImage').val(),
-      articleContent :articleContentValue,
-      idCategory :$('#idCategory').val(),
-      hashtag:$('#hashtag').val()
-    },  
-    function(result){ 
-      $('#webContent').load('articles.php');
-    }, 
-    'text'
-    );
-}
-
-
-
 
 function editAdminPass(){
   var pass=$('#password').val();
@@ -88,25 +68,7 @@ function callProfile(){
 }
 
 
-function callAddArticle(){
-  var articleContentValue= CKEDITOR.instances.articleContent.getData();
-  $.post(
-    'processaddarticle.php',         
-    {
-      title : $('#title').val(),
-      urlImage : $('#urlImage').val(),
-      articleContent :articleContentValue,
-      idCategory :$('#idCategory').val(),
-      description :$('#description').val(),
-      hashtag:$('#hashtag').val(),
-      author:$('#author').val(),
-    },  
-    function(result){ 
-      $('#webContent').load('articles.php');
-    }, 
-    'text'
-    );
-}
+
 //feedback
 
 function callDeleteFeedback(idFeedback){

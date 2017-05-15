@@ -73,7 +73,7 @@ function addArticle($article){
 	$author=$article->getAuthor();
 	$publishDate=$article->getPublishDate();
 	$result= mysqli_query($conn,"insert into article (title,content,description,image,idCategory,hashtag,author,publishDate) values(N'".$title."',
-		N'".$content."',N'".$content."',N'$description' ,'".$image."','".$idCategory."',N'".$hashtag."',N'".$author."',N'".$publishDate."')");
+		N'".$content."',N'".$description."' ,'".$image."','".$idCategory."',N'".$hashtag."',N'".$author."','".$publishDate."')");
 }
 
 function updateArticle($article){

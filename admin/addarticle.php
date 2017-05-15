@@ -53,7 +53,7 @@ if(!(isset($_SESSION['admin']))){
         </div>
 
         <div class="form-group">
-        <label for="description">Description:</label>
+          <label for="description">Description:</label>
           <textarea class="form-control" rows="5" name="description" id="description"></textarea>
         </div>
         <hr>
@@ -72,6 +72,7 @@ if(!(isset($_SESSION['admin']))){
 
 
   <script type="text/javascript">
+
     $(document).ready(function(){
       switchAddArticle();
     });  
@@ -82,5 +83,26 @@ if(!(isset($_SESSION['admin']))){
         document.getElementById('boxAddArticle').style.display='none';
       }
     }
+
+    function callAddArticle(){
+      var articleContentValue= CKEDITOR.instances.articleContent.getData();
+      $.post(
+        'processAddArticle.php',         
+        {
+          title : $('#title').val(),
+          urlImage : $('#urlImage').val(),
+          articleContent :articleContentValue,
+          idCategory :$('#idCategory').val(),
+          description :$('description').val(),
+          hashtag:$('#hashtag').val(),
+          author:$('#author').val()
+        },  
+        function(result){ 
+          $('#webContent').load('articles.php');
+        }, 
+        'text'
+        );
+    }
+
   </script>
   <script src="js/myjs.js"></script>
