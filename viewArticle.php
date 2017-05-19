@@ -5,7 +5,8 @@ include('header.php');
 $idArticle= $_GET['idArticle'];
 $article=getArticle($idArticle);
 ?>
-<div class="container" style="margin-top: 20px;">
+
+<div class="container" id="articleContent" style="margin-top: 20px;">
 	<div class="col-md-8">
 		<div class="box-content row">
 			<h8 class="text-bold background-red text-white">Nội dung bài viết</h8>
@@ -30,3 +31,9 @@ include('footer.php');
 ?>
 </body>
 </html>
+<script type="text/javascript">
+	$(function () {
+		$("html, body").animate({
+			scrollTop: 700}, 1000);
+	});
+</script>

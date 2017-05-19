@@ -54,3 +54,9 @@ include('footer.php');
 ?>
 </body>
 </html>
+<script type="text/javascript">
+	$(function () {
+		$("html, body").animate({
+			scrollTop: 700}, 1000);
+	});
+</script>
