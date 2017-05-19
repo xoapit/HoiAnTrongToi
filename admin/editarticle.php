@@ -52,7 +52,7 @@ $article=getArticle($idArticle);
       <div class="form-group">
         <label for="description">Description:</label>
         <textarea class="form-control" rows="5" name="description" id="description"><?php echo $article->getDescription(); ?>
-          
+
         </textarea>
       </div>
       <hr>
@@ -67,26 +67,8 @@ $article=getArticle($idArticle);
     </form>
   </div>
 </div>
-
 <script type="text/javascript">
-  function editArticle(){
-    var articleContentValue= CKEDITOR.instances.articleContentEdit.getData();
-    $.post(
-      'processEditArticle.php',         
-      {
-        idArticle: $('#idArticle').val(),
-        title : $('#title').val(),
-        urlImage : $('#urlImage').val(),
-        author : $('#author').val(),
-        description : $('#description').val(),
-        articleContent :articleContentValue,
-        hashtag:$('#hashtag').val()
-      },  
-      function(result){  
-       $('#webContent').load('article.php');
-     }, 
-     'text'
-     );
-  }
+
 </script>
+  <script src="../bootstrap/js/jquery.js"></script>
 

@@ -86,7 +86,6 @@ function updateArticle($article){
 	$idCategory=$article->getIdCategory();
 	$hashtag=$article->getHashtag();
 	$author=$article->getAuthor();
-	$publishDate=$article->getPublishDate();
 	$result= mysqli_query($conn,"update article set title=N'".$title."', content=N'".$content."', description=N'".$description."', image='".$image."', 
 		hashtag= N'".$hashtag."' , author=N'$author' where idArticle='".$idArticle."'");
 }
@@ -133,8 +132,19 @@ function isAdminAccount($admin){
 	$conn= getConnect(); 
 	$username=$admin->getUsername();
 	$password=$admin->getPassword();
-	$result= mysqli_query($conn,"select * from admin where username='$username' and password='$password' ");
+
+	$result= mysqli_query($conn,"select * from admin where username='$username'");
 	if($row= mysqli_fetch_assoc($result)){
+		$passwordDB=$row["password"];
+		$token=$row["token"];
+		
+		$check = crypt($password, '$2y$12$' . $token);//2y thuat toan ma hoa bcrypt,12 speed 300ms core i7
+		if (hash_equals($check, $passwordDB)) {
+   			return 'true';
+		}
+		else {
+   			return 'false';
+		}
 		return 'true';
 	}else{		
 		return 'false';

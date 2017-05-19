@@ -123,7 +123,7 @@ if(!(isset($_SESSION['admin']))){
       <!-- page content -->
       <div class="right_col" role="main">
         <div class="webContent" id="webContent" name="webContent">
-
+        <?php include("home.php"); ?>
         </div>
       </div>
       <!-- /page content -->
@@ -154,7 +154,7 @@ if(!(isset($_SESSION['admin']))){
   <script type="text/javascript">
 
     $(document).ready(function(){
-      $("#webContent").load('home.php');
+      
       $('#menu_article').click(function(){
         $('#webContent').load('articles.php');
       });

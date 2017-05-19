@@ -56,7 +56,7 @@ if(isset($_SESSION['admin'])){
 			},  
 			function(result){ 
 				if(result.trim()=="true"){
-					window.location.href('index.php');
+					window.location='index.php';
 				}else{
 					$('#msgNotice').html(result);
 				}

@@ -14,4 +14,5 @@ $today = date('Y/m/d', time());
 $publishDate=$today;
 $article= new Article("",$title,$articleContent,$description,$urlImage,$idCategory,$hashtag,$author,$publishDate);
 addArticle($article);
+echo "Thêm thành công";
 ?>
