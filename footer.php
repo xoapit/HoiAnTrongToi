@@ -1,32 +1,48 @@
-<div style="background: #2c3e50; color:#fefefe;">
-	<div class="container">
-		
-		<div class="col-md-12">
-			<h3 style="border-bottom:5px #fefefe solid; padding-bottom: 5px;">HỘI AN TRONG TÔI</h3>
-		</div>
-		<div class="col-md-12">
-			<div class="col-md-12"><h4>LIÊN HỆ</h4></div>
-			<div class="col-md-6" style="padding: 25px;">
-				<h4 style="font-weight: bold;">Đinh Hữu Quân</h4>
-				<p>Email: huuquan95@gmail.com</p>
-				<p>Phone: 0979432236</p>
-				<p>Địa chỉ: Quảng Nam</p>
-			</div>
-			<div class="col-md-6" style="padding: 25px;">
-				<h4 style="font-weight: bold;">Hồ Tá Quý</h4>
-				<p>Email: xoapit@gmail.com</p>
-				<p>Phone: 01672734732</p>
-				<p>Địa chỉ: Huế</p>
-			</div>
-		</div>
-		<div class="col-md-12">
-		</div>
-	</div>
-	<div class="col-md-12" style="background-color: #2c2e40;">
-		<div class="container">
-			<div class="col-md-3"><p style="margin: 10px 0 10px;">Copyright by QQTeam 2017</p></div>
-			<div class="col-md-9"><p style="margin: 10px 0 10px;"><marquee style="">Later equals never</marquee></p></div>
+	<div class="footer">
+		<footer class="row">
+			<div class="col-md-6 col-xs-12">
+				<div class="footer-left">
+					<h3>Hội An Trong Tôi<span>logo</span></h3>
+					<p class="footer-name">Copyright by QQTeam &copy; 2017</p>
 
-		</div>
-	</div>	
-</div>
+					<div class="padding-5">
+						<span class="glyphicon glyphicon-map-marker"></span>
+						Ngô Sĩ Liên, Đà Nẵng
+					</div>
+
+					<div class="padding-5">
+						<span class="glyphicon glyphicon-phone"></span>
+						+84 0236 123456
+					</div>
+
+					<div class="padding-5">
+						<span class="glyphicon glyphicon-envelope"></span>
+						<a href="mailto:hoiantrongtoi@gmail.com">hoiantrongtoi@gmail.com</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<div class="footer-right">
+
+					<p class="footer-company-about">
+					<span>Member of team</span>
+						<br>
+						<span>1. Hồ Tá Quý</span>
+						<br>
+						<span>2. Đinh Hữu Quân</span>
+					</p>
+
+					<div class="footer-icons">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="#"><i class="fa fa-github"></i></a>
+
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+	</div>
