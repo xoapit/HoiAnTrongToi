@@ -19,10 +19,12 @@ $article=getArticle($idArticle);
 		</div>
 	</div>
 	<div class="col-md-4 padding-left-5">
-		<?php
-		include('weather.php');
-		include('news.php');
-		?>
+		<div id="content-right">
+			<?php
+			include('weather.php');
+			include('news.php');
+			?>
+		</div>
 	</div>
 </div>
 </div>
