@@ -78,8 +78,7 @@ if(!(isset($_SESSION['admin']))){
                 </li>
                 <li id="menu_feedback"><a href="#"><i class="fa fa-pencil"></i> Feedback</a>                   
                 </li>
-                <li id="menu_contact"><a href="#"><i class="fa fa-user"></i> Contact</a>                   
-                </li>
+               
               </ul>
             </div>
             

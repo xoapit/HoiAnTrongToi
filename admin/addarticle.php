@@ -61,7 +61,7 @@ if(!(isset($_SESSION['admin']))){
 
         </textarea>
         <hr>
-        <button name="btnAdd" class="btn btn-danger text-right pull-right" onclick="callAddArticle()"><strong>Create</strong></button>
+        <a name="btnAdd" class="btn btn-danger text-right pull-right" onclick="callAddArticle()"><strong>Create</strong></a>
         <script> 
           CKEDITOR.replace('articleContent');
         </script>

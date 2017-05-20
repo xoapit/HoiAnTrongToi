@@ -16,16 +16,18 @@
 	padding: 10px;
 	margin-top:50px;
 	width: 30%;
-	box-shadow: 0px 0px 3px red;
+	box-shadow: 0px 0px 5px red;
+}
+
+.btn{
+	border-radius: 0px;
 }
 
 .boxContent{
 	padding: 20px;
 	background: #fdfdfd;
 	border: #c0392b solid 1px;
-	border-radius: 5px;
-	border-top-left-radius: 0px;
-	box-shadow: 0px 0px 3px red;
+	box-shadow: 0px 0px 5px red;
 }
 
 .footer{

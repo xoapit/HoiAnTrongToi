@@ -23,28 +23,7 @@ function callEditArticle(IdArticle){
   $('#webContent').load('editArticle.php?idArticle='+IdArticle);
 }
 
-function editArticle(){
-  var articleContentValue= CKEDITOR.instances.articleContentEdit.getData();
 
-  $.post(
-    'processEditArticle.php',         
-      // {
-      //   idArticle: $('#idArticle').val(),
-      //   title : $('#title').val(),
-      //   urlImage : $('#urlImage').val(),
-      //   author : $('#author').val(),
-      //   description : $('#description').val(),
-      //   articleContent :articleContentValue,
-      //   hashtag:$('#hashtag').val()
-      // },  
-      function(result){ 
-        alert("abc");
-        jQuery('#webContent').load('articles.php');
-        alert("abcd");
-      }, 
-      'text'
-      );
-}
 
 function editAdminPass(){
   var pass=$('#password').val();

@@ -15,7 +15,7 @@ $article=getArticle($idArticle);
     Edit Article
   </div>
   <div class="boxContent">
-    <form method="post" class="form form-horizontal">
+    <form class="form-horizontal">
       <div class="form-group">
         <label for="title" class="col-sm-2 ">Title</label>
         <div class="col-sm-8">
@@ -33,7 +33,7 @@ $article=getArticle($idArticle);
       <div class="form-group">
         <label for="hashtag" class="col-sm-2 ">Hashtag</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="hashtag" value="<?php echo $article->getTitle(); ?>" />
+          <input type="text" class="form-control" id="hashtag" value="<?php echo $article->getHashtag(); ?>" />
         </div>
       </div>
       <div class="form-group">
@@ -45,7 +45,6 @@ $article=getArticle($idArticle);
       <div class="form-group">
         <label for="title" class="col-sm-2">Category</label>
         <div class="col-sm-3">
-
           <input type="text" class="form-control" id="categoryName" readonly="true" value="<?php echo getCategoryName($article->getIdCategory()); ?>" />
         </div>
       </div>
@@ -60,7 +59,7 @@ $article=getArticle($idArticle);
         <?php echo $article->getContent(); ?>
       </textarea>
       <hr>
-      <button name="btnEdit" class="btn btn-danger text-right pull-right" onclick="editArticle()"><strong>Edit</strong></button>
+      <a name="btnEdit" class="btn btn-danger text-right pull-right" onclick="editArticle()"><strong>Edit</strong></a>
       <script> 
         CKEDITOR.replace('articleContentEdit');
       </script>
@@ -68,7 +67,25 @@ $article=getArticle($idArticle);
   </div>
 </div>
 <script type="text/javascript">
-
+  function editArticle(){
+    var articleContentValue= CKEDITOR.instances.articleContentEdit.getData();
+    $.post(
+      'processEditArticle.php',         
+      {
+       idArticle: $('#idArticle').val(),
+       title : $('#title').val(),
+       urlImage : $('#urlImage').val(),
+       author : $('#author').val(),
+       description : $('#description').val(),
+       articleContent :articleContentValue,
+       hashtag:$('#hashtag').val()
+     },  
+     function(result){ 
+      $('#webContent').load('articles.php');
+    }, 
+    'text'
+    );
+  }
 </script>
-  <script src="../bootstrap/js/jquery.js"></script>
+<script src="../bootstrap/js/jquery.js"></script>
 
