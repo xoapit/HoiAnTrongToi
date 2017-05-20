@@ -6,6 +6,16 @@
 		} else{
 			$('#topmenu').css('display','none'); 
 		}
+
+		if(scrollTop>=660 && $(window).width()>1000){
+			$('#content-right').css('top','45px');
+			$('#content-right').css('position','fixed');
+			$('#content-right').css('width','29%');
+		}else{
+			$('#content-right').css('top','none');
+			$('#content-right').css('position','none');
+			$('#content-right').css('width','100%');
+		}
 	});
 </script>
 

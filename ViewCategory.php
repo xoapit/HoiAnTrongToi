@@ -4,8 +4,8 @@ $idCategory= $_GET['idCategory'];
 <?php
 include('header.php');
 ?>
-<div class="container" style="margin-top: 20px;">
-	<div class="col-md-8">
+<div class="container container-body">
+	<div class="col-md-8 padding-right-5">
 		<div class="box-content row">
 			<h8 class="text-bold background-red text-white">Xem theo thể loại</h8>
 			<div class="line_red">
@@ -24,12 +24,12 @@ include('header.php');
 							<div class="col-md-8 caption">
 								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>"><h3><?php echo $article->getTitle(); ?></h3></a><?php echo $article->getDescription(); ?>
 								<hr/>
-								<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"><?php echo $article->getAuthor(); ?>&nbsp</span>
-									<span class="glyphicon glyphicon-calendar"><?php
-										$publishDate=$article->getPublishDate();
-										echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
-										
-									</span>
+								<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"></span><?php echo $article->getAuthor(); ?>&nbsp
+									<span class="glyphicon glyphicon-calendar"></span><?php
+									$publishDate=$article->getPublishDate();
+									echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
+									
+									
 								</div>
 								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
 							</div>
@@ -41,7 +41,7 @@ include('header.php');
 			?>
 		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 padding-left-5">
 		<?php
 		include('weather.php');
 		include('news.php');

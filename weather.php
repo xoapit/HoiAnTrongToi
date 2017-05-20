@@ -1,4 +1,4 @@
-<div class="box-content">
+<div class="box-content row" >
 
 	<h8 class="text-bold background-red text-white">Thời tiết</h8>
 	<div class="line_red"></div>

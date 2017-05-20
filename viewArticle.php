@@ -6,8 +6,8 @@ $idArticle= $_GET['idArticle'];
 $article=getArticle($idArticle);
 ?>
 
-<div class="container" id="articleContent" style="margin-top: 20px;">
-	<div class="col-md-8">
+<div class="container container-body" id="articleContent">
+	<div class="col-md-8 padding-right-5">
 		<div class="box-content row">
 			<h8 class="text-bold background-red text-white">Nội dung bài viết</h8>
 			<div class="line_red"></div>
@@ -18,7 +18,7 @@ $article=getArticle($idArticle);
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 padding-left-5">
 		<?php
 		include('weather.php');
 		include('news.php');
