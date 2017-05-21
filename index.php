@@ -11,7 +11,7 @@ include('header.php');
 			$articles= getListArticles();
 			$i=0;
 			foreach ($articles as $article) {
-			if($i++==1) break;
+			if($i++==10) break;
 			?>							
 				<div>
 					<div class="col-md-12">
