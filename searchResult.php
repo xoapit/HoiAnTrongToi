@@ -7,7 +7,7 @@ include('header.php');
 <div class="container" style="margin-top: 20px;">
 	<div class="col-md-8">
 		<div class="box-content row">
-			<h8 class="text-bold background-red text-white">Xem theo thể loại</h8>
+			<h8 class="text-bold background-red text-white">Kết quả tìm kiếm</h8>
 			<div class="line_red">
 			</div>
 			<!--doan1-->
