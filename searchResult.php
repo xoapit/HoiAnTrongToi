@@ -24,12 +24,28 @@ include('header.php');
 							<div class="col-md-8 caption">
 								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>"><h3><?php echo $article->getTitle(); ?></h3></a><?php echo $article->getDescription(); ?>
 								<hr/>
-								<div class="mo" style="opacity:10%;"><span class="glyphicon glyphicon-user"></span>&nbsp<?php echo $article->getAuthor(); ?>&nbsp
-									<span class="glyphicon glyphicon-calendar"><?php
-										$publishDate=$article->getPublishDate();
-										echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
+								<div class="mo" style="opacity:10%;">
+
+									<span class="glyphicon glyphicon-user">
+
 										
+
 									</span>
+
+									<?php echo $article->getAuthor(); ?>&nbsp
+
+									<span class="glyphicon glyphicon-calendar">
+
+										
+
+									</span>
+
+									<?php
+
+									$publishDate=$article->getPublishDate();
+
+									echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
+
 								</div>
 								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
 							</div>
