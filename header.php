@@ -60,7 +60,7 @@ include('controller/controller.php');
 								<a href="viewCategory.php?idCategory=C05" style="color:#FFF">DV LƯU TRÚ</a>
 							</li>
 							<li>
-								<a href="map.php" style="color:#FFF">BẢN ĐỒ</a>
+								<a href="map.php?idCategory=C00" style="color:#FFF">BẢN ĐỒ</a>
 							</li>
 							<li>
 								<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>

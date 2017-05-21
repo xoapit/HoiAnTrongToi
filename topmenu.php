@@ -16,8 +16,12 @@
 			$('#content-right').css('position','none');
 			$('#content-right').css('width','100%');
 		}
+		//var type=$_GET['idCategory'];
+		//if(type==null)
+		$('#lehoi').css('background','#555');
 	});
 </script>
+
 
 <div class="topmenu" id="topmenu">
 	<nav class="navbar-inverse navTopMenu">
@@ -40,29 +44,55 @@
 		<!-- Nav collapse -->
 		<div class="collapse navbar-collapse" id="menu2">
 			<ul class="nav navbar-nav ">
-				<li>
-					<a href="viewCategory.php?idCategory=C02" style="color:#FFF">LỄ HỘI</a>
-				</li>
-				<li>
-					<a href="viewCategory.php?idCategory=C04" style="color:#FFF">ĐIỂM THAM QUAN</a>
-				</li>
-				<li>
-					<a href="viewCategory.php?idCategory=C03" style="color:#FFF">ẨM THỰC</a>
-				</li>
-				<li>
-					<a href="viewCategory.php?idCategory=C05" style="color:#FFF">DV LƯU TRÚ</a>
-				</li>
-				<li>
-					<a href="map.php" style="color:#FFF">BẢN ĐỒ</a>
-				</li>
-				<li>
-					<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
-				</li>						
-			</ul>
-			<ul class="nav navbar-right" style="padding-top: 15px; padding-right: 40px; color:white;">
-				Tel: 01672734732
-			</ul>
-			<!-- /.navbar-collapse -->
+				<?php 
+				$type="";
+				if(isset($_GET['idCategory'])){
+					$type=$_GET['idCategory']; 
+				}
+				
+				?>
+				<?php
+				if($type=="C02") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				
+				<a href="viewCategory.php?idCategory=C02" style="color:#FFF">LỄ HỘI</a>
+			</li>
+			<?php
+				if($type=="C04") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				<a href="viewCategory.php?idCategory=C04" style="color:#FFF">ĐIỂM THAM QUAN</a>
+			</li>
+			<?php
+				if($type=="C03") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				<a href="viewCategory.php?idCategory=C03" style="color:#FFF">ẨM THỰC</a>
+			</li>
+			<?php
+				if($type=="C05") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				<a href="viewCategory.php?idCategory=C05" style="color:#FFF">DV LƯU TRÚ</a>
+			</li>
+			<?php
+				if($type=="C00") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				<a href="map.php?idCategory=C00" style="color:#FFF">BẢN ĐỒ</a>
+			</li>
+			<?php
+				if($type=="C06") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
+			</li>						
+		</ul>
+		<ul class="nav navbar-right" style="padding-top: 15px; padding-right: 40px; color:white;">
+			Tel: 01672734732
+		</ul>
+		<!-- /.navbar-collapse -->
 
-		</nav>
-	</div>
+	</nav>
+</div>
