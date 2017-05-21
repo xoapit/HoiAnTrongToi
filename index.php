@@ -38,7 +38,7 @@ include('header.php');
 									$publishDate=$article->getPublishDate();
 									echo substr($publishDate, 8,2).'-'.substr($publishDate, 5,2).'-'.substr($publishDate, 0,4); ?>
 								</div>
-								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
+								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>&idCategory=<?php echo $article->getIdCategory(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
 							</div>
 						</div>
 					</div>

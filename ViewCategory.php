@@ -31,7 +31,7 @@ include('header.php');
 									
 									
 								</div>
-								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
+								<a href="viewArticle.php?idArticle=<?php echo $article->getIdArticle(); ?>&idCategory=<?php echo $article->getIdCategory(); ?>" class="btn btn-primary pos_right_below" role="button">Read more</a>
 							</div>
 						</div>
 					</div>
