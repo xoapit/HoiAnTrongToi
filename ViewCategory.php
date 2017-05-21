@@ -13,7 +13,9 @@ include('header.php');
 			<!--doan1-->
 			<?php
 			$articles= getArticlesByIdCategory($idCategory);
+			$i=0;
 			foreach ($articles as $article) {
+			if($i++==10) break;
 				?>							
 				<div>
 					<div class="col-md-12">
