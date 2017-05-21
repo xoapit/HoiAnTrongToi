@@ -51,7 +51,16 @@ function getArticlesByIdCategory($idCategory){
 	}
 	return $articles;
 }
-
+function getArticlesBySearch($searchContent){
+	$articles = new ArrayObject();
+	$conn= getConnect(); 
+	$result= mysqli_query($conn,"select * from article where hashtag  like '%".$searchContent."%'");
+	while($row= mysqli_fetch_assoc($result)){
+		$article=new Article($row['idArticle'],$row['title'],$row['content'],$row['description'],$row['image'],$row['idCategory'],$row['hashtag'],$row['author'],$row['publishDate']);
+		$articles->append($article); 
+	}
+	return $articles;
+}
 function getArticle($idArticle){
 	$articles;
 	$conn= getConnect(); 
