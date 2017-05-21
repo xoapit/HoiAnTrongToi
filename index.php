@@ -9,7 +9,7 @@ include('header.php');
 			<!--doan1-->
 			<?php
 			$articles= getListArticles();
-			$i=0;
+			int $i=0;
 			foreach ($articles as $article) {
 			if($i++==5) break;	
 			?>							
