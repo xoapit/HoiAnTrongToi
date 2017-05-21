@@ -4,7 +4,7 @@ include('controller/controller.php');
 <script type="text/javascript">
 	function checkSearch(){
 		var searchContent= document.getElementById("searchContent").value;
-		if(searchContent=="") alert("DM! Nhap di mi!");
+		if(searchContent=="") alert("Vui lòng nhập thông tin!");
 		else{
 			window.location="searchResult.php?searchContent="+searchContent;
 		}
