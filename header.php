@@ -1,6 +1,15 @@
 <?php
 include('controller/controller.php');
 ?>
+<script type="text/javascript">
+	function checkSearch(){
+		var searchContent= document.getElementById("searchContent").value;
+		if(searchContent=="") alert("DM! Nhap di mi!");
+		else{
+			window.location="searchResult.php?searchContent="+searchContent;
+		}
+	}
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,9 +93,9 @@ include('controller/controller.php');
 								<center>
 									<div class="form-group input_search col-sm-offset-3 col-sm-6 col-xs-12 ">
 										<div class="col-sm-11 col-xs-10">
-											<input class="form-control input-lg" type="text" name="searchContent" id="searchContent" placeholder="Search..." />
+											<input class="form-control input-lg" type="text" id="searchContent" placeholder="Search..." />
 										</div>
-										<input type="button" name="btnSearch" class="btn btn-default col-sm-1 col-xs-2 btn-lg btn_search" />
+										<input type="button"  onclick="checkSearch()" name="btnSearch" class="btn btn-default col-sm-1 col-xs-2 btn-lg btn_search" />
 									</div>
 								</center>
 							</form>
