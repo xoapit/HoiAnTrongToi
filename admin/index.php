@@ -38,7 +38,7 @@ if(!(isset($_SESSION['admin']))){
   <link href="build/css/custom.min.css" rel="stylesheet">
   
   <link href="css/style.css" rel="stylesheet">
-  <script src="../ckeditor/ckeditor.js"></script>
+  <script src="ckeditor/ckeditor.js"></script>
 </head>
 
 <body class="nav-md">

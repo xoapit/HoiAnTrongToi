@@ -62,6 +62,7 @@ $article=getArticle($idArticle);
       <a name="btnEdit" class="btn btn-danger text-right pull-right" onclick="editArticle()"><strong>Edit</strong></a>
       <script> 
         CKEDITOR.replace('articleContentEdit');
+        //CKEDITOR.config.filebrowserImageUploadUrl = '{!! route('uploadPhoto').'?_token='.csrf_token() !!}';
       </script>
     </form>
   </div>
