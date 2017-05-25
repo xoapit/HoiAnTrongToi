@@ -9,7 +9,7 @@ $article=getArticle($idArticle);
 <div class="container container-body" id="articleContent">
 	<div class="col-md-8 padding-right-5">
 		<div class="box-content row">
-			<h8 class="text-bold background-red text-white">Nội dung bài viết</h8>
+			<h8 class="text-bold background-red text-white">Bài viết</h8>
 			<div class="line_red"></div>
 			<!--doan1-->
 			<div class="box-content" style="padding: 20px;">
