@@ -209,4 +209,17 @@ function deleteFeedback($idFeedback){
 	$result= mysqli_query($conn,"delete from feedback where idFeedback='".$idFeedback."'");
 }
 
+function addFeedback($feedback){
+
+	$conn= getConnect(); 
+	$author=$feedback->getAuthor();
+	$subject=$feedback->getSubject();
+	$content=$feedback->getContent();
+	$time=$feedback->getTime();
+	$phone=$feedback->getPhone();
+	$email=$feedback->getEmail();
+	$result= mysqli_query($conn,"insert into feedback (author,subject,content,time,phone,email) values(N'".$author."',
+		N'".$subject."',N'".$content."' ,'".$time."','".$phone."',N'".$email."')");
+}
+
 ?>

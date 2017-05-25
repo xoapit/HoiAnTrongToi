@@ -73,6 +73,9 @@ include('controller/controller.php');
 							</li>
 							<li>
 								<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
+							</li>	
+							<li>
+								<a href="feedback.php?idCategory=feedback" style="color:#FFF">GÓP Ý</a>
 							</li>						
 						</ul>
 

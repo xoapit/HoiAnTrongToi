@@ -11,10 +11,12 @@
 			$('#content-right').css('top','45px');
 			$('#content-right').css('position','fixed');
 			$('#content-right').css('width','29%');
+			$('#descriptionWeather').css('display','none');
 		}else{
 			$('#content-right').css('top','none');
 			$('#content-right').css('position','none');
 			$('#content-right').css('width','100%');
+			$('#descriptionWeather').css('display','block');
 		}
 		//var type=$_GET['idCategory'];
 		//if(type==null)
@@ -87,6 +89,12 @@
 				else echo "<li>"; 
 				?>
 				<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
+			</li>						
+			<?php
+				if($type=="feedback") echo "<li  style='background: #c0392b'>"; 
+				else echo "<li>"; 
+				?>
+				<a href="feedback.php?idCategory=feedback" style="color:#FFF">GÓP Ý</a>
 			</li>						
 		</ul>
 		<ul class="nav navbar-right" style="padding-top: 15px; padding-right: 40px; color:white;">

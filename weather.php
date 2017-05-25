@@ -36,11 +36,13 @@
 					<p style="font-size: 200%;color: #34495e;">  ° C</p>
 				</div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-12" >
 				<center>
 					<h3 class="text-info" style="font-size: 200%;"><?php echo $description;?></h3><br>
-					<p style="margin-top: -20px;">Wind speed <?php echo $win_speed;?> km/h &nbsp&nbsp&nbsp  Visibility <?php echo $visibility;?> km</p><br>
+					<div id="descriptionWeather">
+						<p style="margin-top: -20px;">Wind speed <?php echo $win_speed;?> km/h &nbsp&nbsp&nbsp  Visibility <?php echo $visibility;?> km</p><br>
 					<p style="margin-top: -20px;">Humidity <?php echo $humidity;?> %&nbsp&nbsp&nbsp Min temp <?php echo $temp_min;?> °C &nbsp&nbsp&nbsp Max temp <?php echo $temp_max;?> °C</p>
+					</div>
 				</center>
 			</div>
 		</div>
