@@ -66,13 +66,13 @@ include('controller/controller.php');
 								<a href="viewCategory.php?idCategory=C03" style="color:#FFF">ẨM THỰC</a>
 							</li>
 							<li>
-								<a href="viewCategory.php?idCategory=C05" style="color:#FFF">DV LƯU TRÚ</a>
+								<a href="viewArticle.php?idCategory=C05&idArticle=11" style="color:#FFF">DV LƯU TRÚ</a>
 							</li>
 							<li>
 								<a href="map.php?idCategory=C00" style="color:#FFF">BẢN ĐỒ</a>
 							</li>
 							<li>
-								<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
+								<a href="viewArticle.php?idCategory=C06&idArticle=12" style="color:#FFF">NGÂN HÀNG</a>
 							</li>	
 							<li>
 								<a href="feedback.php?idCategory=feedback" style="color:#FFF">GÓP Ý</a>

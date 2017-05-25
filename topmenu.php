@@ -76,7 +76,7 @@
 				if($type=="C05") echo "<li  style='background: #c0392b'>"; 
 				else echo "<li>"; 
 				?>
-				<a href="viewCategory.php?idCategory=C05" style="color:#FFF">DV LƯU TRÚ</a>
+				<a href="viewArticle.php?idCategory=C05&idArticle=11" style="color:#FFF">DV LƯU TRÚ</a>
 			</li>
 			<?php
 				if($type=="C00") echo "<li  style='background: #c0392b'>"; 
@@ -88,7 +88,7 @@
 				if($type=="C06") echo "<li  style='background: #c0392b'>"; 
 				else echo "<li>"; 
 				?>
-				<a href="viewCategory.php?idCategory=C06" style="color:#FFF">NGÂN HÀNG</a>
+				<a href="viewArticle.php?idCategory=C06&idArticle=12" style="color:#FFF">NGÂN HÀNG</a>
 			</li>						
 			<?php
 				if($type=="feedback") echo "<li  style='background: #c0392b'>"; 
