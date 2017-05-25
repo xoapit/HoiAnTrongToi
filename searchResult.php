@@ -13,6 +13,7 @@ include('header.php');
 			<!--doan1-->
 			<?php
 			$articles= getArticlesBySearch($searchContent);
+			if(count($articles)==0) echo "<center><h3 class=\"text-info\">Không có kết quả phù hợp</h3></center>" ;
 			foreach ($articles as $article) {
 				?>							
 				<div>
@@ -26,19 +27,11 @@ include('header.php');
 								<hr/>
 								<div class="mo" style="opacity:10%;">
 
-									<span class="glyphicon glyphicon-user">
-
-										
-
-									</span>
+									<span class="glyphicon glyphicon-user"></span>
 
 									<?php echo $article->getAuthor(); ?>&nbsp
 
-									<span class="glyphicon glyphicon-calendar">
-
-										
-
-									</span>
+									<span class="glyphicon glyphicon-calendar"></span>
 
 									<?php
 
