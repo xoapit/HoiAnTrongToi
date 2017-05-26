@@ -58,4 +58,10 @@ include('header.php');
 include('footer.php');
 ?>
 </body>
+<script type="text/javascript">
+	$(function () {
+		$("html, body").animate({
+			scrollTop: 700}, 1000);
+	});
+</script>
 </html>
