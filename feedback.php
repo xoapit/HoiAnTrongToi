@@ -4,7 +4,7 @@ include('header.php');
 <div class="container container-body" >
 	<div class="col-md-8 padding-right-5">
 		<div class="box-content row">
-			<h8 class="text-bold background-red text-white">Hội An trong tôi</h8>
+			<h8 class="text-bold background-red text-white">Ý kiến phản hồi</h8>
 			<div class="line_red"></div>
 
 			<form action="proccessAddFeedback.php" method="post">
